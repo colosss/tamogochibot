@@ -12,7 +12,8 @@ class start_helpers:
     Вот список доступных команд:\n
     /help - вывести справку
     /start - начать игру"""
-
+#SDFSDGFDG
+#DFGDFFFFFFFSFGSFDSF
 class config:
     token = '6620453925:AAGdFBKWCfxD3PeVMAmWLomP7zS6yVjhCY8'
 

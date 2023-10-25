@@ -7,7 +7,9 @@ bot = telebot.TeleBot(helpers.config.token)
 welcome = helpers.start_helpers
 
 info = helpers.main_info
-
+#ASDASDASDASD
+#ASDAGAGD
+#FDFGFDHGDFHGFD
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
