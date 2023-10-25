@@ -14,29 +14,6 @@ def send_welcome(message):
 	info.keyboard(markup, 'Начнем!', 'Помощь', 'Какой-то текст')
 	bot.send_photo(message.chat.id, photo=open(welcome.start_pic, 'rb'), caption=welcome.welcome_text, reply_markup=markup)
 	# bot.register_next_step_handler
-#  фывфыыыфыввввввввввв
-# ыфвфывввввввввввввв
-# фывфыыыфыввввввввввв
-# ыфвфыввввввввввввввasdasd
-# фывфыыыфывввввввввввl;.o;o
-# ыфвфывввввввввввввв
-# фывфыыыфывввввввввввgggggyjmiku
-# ыфвфывввввввввввввв
-# фывфыыыфыввввввввввв
-# ыфвфывввввввввввввв
-# фывфыыыфыввввввввввв
-# ыфвфывввввввввввввв
-# фывфыыыфыввввввввввв
-# ыфвфывввввввввввввв
-# фывфыыыфыввввввввввв
-# ыфвфывввввввввввввв
-# фывфыыыфыввввввввввв
-# ыфвфывввввввввввввв
-
-# фывфыыыфыввввввввввв
-# ыфвфывввввввввввввв
-# фывфыыыфыввввввввввв
-# ыфвфывввввввввввввв
 @bot.message_handler(commands=['help'])
 def send_help(message):
 	bot.send_message(message.chat.id, welcome.help_text)
