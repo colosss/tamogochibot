@@ -12,7 +12,7 @@ info = helpers.main_info
 def send_welcome(message):
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
 	info.keyboard(markup, 'Начнем!', 'Помощь', 'Какой-то текст')
-	bot.send_photo(message.chat.id, photo=open('1_start_pic.png', 'rb'), caption=welcome.welcome_text, reply_markup=markup)
+	bot.send_photo(message.chat.id, photo=open('start_pic', 'rb'), caption=welcome.welcome_text, reply_markup=markup)
 	# bot.register_next_step_handler
 
 @bot.message_handler(commands=['help'])
