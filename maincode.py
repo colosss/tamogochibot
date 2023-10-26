@@ -29,7 +29,6 @@ def send_welcome(message):
 def send_help(message):
 	if message.text=='/help' or message.text=='Помощь':
 		bot.send_message(message.chat.id, welcome.help_text)
-def nachalo(message):
 	if message.text=='Начнем!':
 		bn=True
 		info.keyboard(markup, 'Назад')
