@@ -2,6 +2,7 @@ import telebot
 import helpers
 from telebot import types
 
+bn=0
 
 bot = telebot.TeleBot(helpers.config.token) 
 
@@ -13,16 +14,15 @@ info = helpers.main_info
 
 # Переменные для создания условий->
 
-bn=False
-
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	if bn !=True:
+	if bn == 0:
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
 		info.keyboard(markup, 'Начнем!', 'Помощь', 'Какой-то текст')
 		bot.send_photo(message.chat.id, photo=open(welcome.start_pic, 'rb'), caption=welcome.welcome_text, reply_markup=markup)
+		bn+=1
 	# bot.register_next_step_handler
-	elif bn==True:
+	elif bn>0:
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
 		info.keyboard(markup, 'Продолжим!', 'Помощь', 'Какой-то текст')
 		bot.send_photo(message.chat.id, photo=open(welcome.start_pic, 'rb'), caption=f'{welcome.welcome_text}\n{welcome.prodolj_text}', reply_markup=markup)
@@ -33,7 +33,6 @@ def send_help(message):
 		bot.send_message(message.chat.id, welcome.help_text)
 	if message.text=='Начнем!':
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
-		bn = True
 		info.keyboard(markup, 'Назад')
 		bot.send_photo(message.chat.id, photo=open(na.nachalo_pic, 'rb'), caption=na.nachalo_text, reply_markup=markup)
 # @bot.message_handler(func=lambda x: x.text=='1')
