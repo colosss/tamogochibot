@@ -2,7 +2,7 @@ import telebot
 import helpers
 from telebot import types
 
-markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2, one_time_keyboard=True)
 
 bot = telebot.TeleBot(helpers.config.token) 
 
