@@ -16,7 +16,6 @@ def send_welcome(message):
 	# bot.register_next_step_handler
 @bot.message_handler(func=lambda m:True)
 def send_help(message):
-	if message=='/help':
 		bot.send_message(message.chat.id, welcome.help_text)
 
 bot.infinity_polling()
