@@ -27,7 +27,7 @@ def send_welcome(message):
 		info.keyboard(markup, 'Продолжим!', 'Помощь', 'Какой-то текст')
 		bot.send_photo(message.chat.id, photo=open(welcome.start_pic, 'rb'), caption=f'{welcome.welcome_text}\n{welcome.prodolj_text}', reply_markup=markup)
 		
-@bot.message_handler(func=lambda m:True)
+@bot.message_handler()
 def send_help(message):
 	if message.text=='/help' or message.text=='Помощь':
 		bot.send_message(message.chat.id, welcome.help_text)
