@@ -2,8 +2,6 @@ import telebot
 import helpers
 from telebot import types
 
-bn=0
-
 bot = telebot.TeleBot(helpers.config.token) 
 
 welcome = helpers.start_helpers
@@ -14,15 +12,20 @@ info = helpers.main_info
 
 # Переменные для создания условий->
 
+def local_namespace():
+	global bn
+	bn=False
+	return bn
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	if bn == 0:
+	if bn == False:
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
 		info.keyboard(markup, 'Начнем!', 'Помощь', 'Какой-то текст')
 		bot.send_photo(message.chat.id, photo=open(welcome.start_pic, 'rb'), caption=welcome.welcome_text, reply_markup=markup)
 		bn+=1
 	# bot.register_next_step_handler
-	elif bn>0:
+	elif bn==True:
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
 		info.keyboard(markup, 'Продолжим!', 'Помощь', 'Какой-то текст')
 		bot.send_photo(message.chat.id, photo=open(welcome.start_pic, 'rb'), caption=f'{welcome.welcome_text}\n{welcome.prodolj_text}', reply_markup=markup)
@@ -32,6 +35,7 @@ def send_help(message):
 	if message.text=='/help' or message.text=='Помощь':
 		bot.send_message(message.chat.id, welcome.help_text)
 	if message.text=='Начнем!':
+		bn=True
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
 		info.keyboard(markup, 'Назад')
 		bot.send_photo(message.chat.id, photo=open(na.nachalo_pic, 'rb'), caption=na.nachalo_text, reply_markup=markup)
