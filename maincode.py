@@ -14,8 +14,9 @@ def send_welcome(message):
 	info.keyboard(markup, 'Начнем!', 'Помощь', 'Какой-то текст')
 	bot.send_photo(message.chat.id, photo=open(welcome.start_pic, 'rb'), caption=welcome.welcome_text, reply_markup=markup)
 	# bot.register_next_step_handler
-@bot.message_handler(commands=['help'])
+@bot.message_handler(func=lambda m:True)
 def send_help(message):
-	bot.send_message(message.chat.id, welcome.help_text)
+	if message=='/help':
+		bot.send_message(message.chat.id, welcome.help_text)
 
 bot.infinity_polling()
