@@ -21,7 +21,8 @@ def send_welcome(message):
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
 		info.keyboard(markup, 'Начнем!', 'Помощь', 'Какой-то текст')
 		bot.send_photo(message.chat.id, photo=open(welcome.start_pic, 'rb'), caption=welcome.welcome_text, reply_markup=markup)
-		# return bn = True
+		bn = True
+		return
 	# bot.register_next_step_handler
 	elif bn==True:
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
@@ -34,7 +35,7 @@ def send_help(message):
 		bot.send_message(message.chat.id, welcome.help_text)
 	if message.text=='Начнем!':
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
-		bn=True
+		bn = True
 		info.keyboard(markup, 'Назад')
 		bot.send_photo(message.chat.id, photo=open(na.nachalo_pic, 'rb'), caption=na.nachalo_text, reply_markup=markup)
 bot.infinity_polling()
