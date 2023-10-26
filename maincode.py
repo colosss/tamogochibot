@@ -36,7 +36,7 @@ def send_help(message):
 		bn = True
 		info.keyboard(markup, 'Назад')
 		bot.send_photo(message.chat.id, photo=open(na.nachalo_pic, 'rb'), caption=na.nachalo_text, reply_markup=markup)
-@bot.message_handler(func=lambda x: x.text='1')
-def asdasd(message):
-	bot.send_message(message.chat.id, 'dasdasdasd' )
+# @bot.message_handler(func=lambda x: x.text=='1')
+# def asdasd(message):
+# 	bot.send_message(message.chat.id, 'dasdasdasd' )
 bot.infinity_polling()
