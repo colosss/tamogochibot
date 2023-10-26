@@ -13,7 +13,7 @@ info = helpers.main_info
 
 # Переменные для создания условий->
 
-bn=False
+bn=helpers.start_helpers.bn
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
