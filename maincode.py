@@ -18,8 +18,7 @@ info = helpers.main_info
 # 	return bn
 # local_namespace()
 bn=False
-a=1
-while a==1:
+while True:
 	@bot.message_handler(commands=['start'])
 	def send_welcome(message):
 		if bn == False:
