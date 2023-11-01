@@ -35,4 +35,5 @@ def send_reg(message):
 		helpers.start_helpers.bn=True
 		info.keyboard(markup,'Назад','Помощь')
 		bot.send_photo(message.chat.id, photo=open(na.nachalo_pic, 'rb'), caption=na.nachalo_text, reply_markup=markup)
+		#fvvfg
 bot.infinity_polling()
