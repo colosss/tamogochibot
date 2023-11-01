@@ -34,5 +34,6 @@ def send_reg(message):
 		markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2,selective=True)
 		helpers.start_helpers.bn=True
 		info.keyboard(markup,'Назад','Помощь')
+		#adasd
 		bot.send_photo(message.chat.id, photo=open(na.nachalo_pic, 'rb'), caption=na.nachalo_text, reply_markup=markup)
 bot.infinity_polling()
