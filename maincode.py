@@ -36,8 +36,13 @@ def send_reg(message):
 		info.keyboard(markup,'Назад','Помощь')
 		#adasd
 		bot.send_photo(message.chat.id, photo=open(na.nachalo_pic, 'rb'), caption=na.nachalo_text, reply_markup=markup)
+<<<<<<< HEAD
 @bot.message_handler(func=lambda m:True)
 def send_message(message):
 	if message.text==message:
 		bot.send_message(message.chat.id,'sadasd')
 bot.infinity_polling()
+=======
+		#fvvfg
+bot.infinity_polling()
+>>>>>>> d7220f080931475e9a7d12b7bbd27f5b104654e2
