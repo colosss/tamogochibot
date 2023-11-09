@@ -2,7 +2,6 @@ import telebot
 import random
 from helpers import *
 from telebot import types
-# -*- coding: utf-8 -*-
 
 bot = telebot.TeleBot(config.token) 
 welcome = start_helpers
@@ -11,7 +10,7 @@ random_pet_names = ['Пирожок', 'Пряник', 'Киска', 'Крыск�
 
 class pet_info:
 	def pet_name_to_file(message):
-		with open('base.txt', 'a') as f:
+		with open('base.txt','a',encoding='utf-8') as f:
 			f.write(str(message.from_user.id)+':'+gameplay.pet_name+'\n')
 		return
 	def pet_name_check(message):
