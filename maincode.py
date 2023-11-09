@@ -2,6 +2,7 @@ import telebot
 import random
 from helpers import *
 from telebot import types
+# -*- coding: utf-8 -*-
 
 bot = telebot.TeleBot(config.token) 
 welcome = start_helpers
